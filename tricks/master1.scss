@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: auto;
+
+    >.cont {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        text-transform: capitalize;
+        background-image: radial-gradient(rgb(56, 5, 5), rgb(42, 1, 1), rgb(50, 20, 20));
+
+        >h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 90px;
+            opacity: 0;
+            color: white;
+            animation: txt 6s linear 9s forwards alternate , rot 6s linear 9s forwards alternate;
+        }
+
+        >h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 90px;
+            opacity: 0;
+            color: white;
+
+            &:nth-of-type(1) {
+                animation: txt 3s linear 0s forwards alternate;
+            }
+
+            &:nth-of-type(2) {
+                animation: txt 3s linear 3s forwards alternate;
+            }
+
+            &:nth-of-type(3) {
+                animation: txt 3s linear 6s forwards alternate;
+            }
+
+            &:nth-of-type(4) {
+                animation: txt 3s linear 15s forwards alternate;
+            }
+        }
+
+        >h3 {
+            position: absolute;
+            font-size: 90px;
+            opacity: 0;
+            text-transform: capitalize;
+            color: white;
+
+            &:nth-of-type(1) {
+                top: 50%;
+                left: 20%;
+                animation: txt2 2s linear 17s forwards alternate;
+            }
+
+            &:nth-of-type(2) {
+                top: 50%;
+                left: 45%;
+                animation: txt2 2s linear 19s forwards alternate;
+            }
+
+            &:nth-of-type(3) {
+                top: 50%;
+                left: 65%;
+                animation: txt2 2s linear 21s forwards alternate;
+            }
+        }
+    }
+}
+
+@keyframes txt {
+    0% {
+        scale: 10;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        filter: blur(60px);
+    }
+
+    50% {
+        scale: 1;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    70% {
+        scale: 1;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    100% {
+        scale: 0;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        filter: blur(60px);
+    }
+}
+
+@keyframes txt2 {
+    0% {
+        opacity: 0;
+        color: black
+    }
+
+    100% {
+        opacity: 1;
+        color: white;
+    }
+
+}
+@keyframes rot {
+    0%{
+        transform: translate(-50%,-50%);
+    }
+
+    50%{
+        transform: translate(-50%,-50%) rotateY(360deg);
+    }
+    70%{
+        transform: translate(-50%,-50%) rotateY(360deg);
+    }
+    100%{
+        transform: translate(-50%,-50%);
+    }
+    
+}
